@@ -1,0 +1,26 @@
+{
+    "name": "content_script_uxss_example",
+    "description": "一个由原型修改而来会产生UXSS的Chrome插件",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "/core/js/background.js"
+        ]
+    },
+    "author": "neargle@sec-news",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file:///*/*"
+            ],
+            "exclude_matches": [],
+            "js": [
+                "/core/js/content_script.js"
+			],
+            "run_at": "document_end"
+        }
+    ]
+}
