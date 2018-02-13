@@ -5,6 +5,7 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
+            "/core/js/jquery.min.js",
             "/core/js/background.js"
         ]
     },
@@ -18,9 +19,11 @@
             ],
             "exclude_matches": [],
             "js": [
+                "/core/js/jquery.min.js",
                 "/core/js/content_script.js"
 			],
-            "run_at": "document_end"
+            "run_at": "document_end",
+            "all_frames": true
         }
     ]
 }
